@@ -81,4 +81,4 @@ This project focuses on system design and reliability engineering rather than fu
 ## Author
 
 Emma Ahmad Sirajudin  
-Senior Software Engineer  
+MSc. Computer Science (Universiti Malaysia Terengganu) 
