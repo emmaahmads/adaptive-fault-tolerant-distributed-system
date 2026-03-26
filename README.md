@@ -9,13 +9,13 @@ The system transforms a single-node application into a distributed architecture 
 ## System Architecture
 
 <p align="center">
-  <img src="image/overview.JPG" width="800"/>
+  <img src="image/overview.JPG" width="500"/>
 </p>
 
 ## Failure Handling Flow
 
 <p align="center">
-  <img src="image/failover.JPG" width="800"/>
+  <img src="image/failover.JPG" width="500"/>
 </p>
 
 ## Key Features
