@@ -38,7 +38,7 @@ This architecture illustrates how client requests are routed through a proxy to 
 </p>
 
 1. **Failure Detection**  
-   Nodes are continuously monitored using heartbeat signals over socket communication. Missing heartbeats indicate potential failure.
+   Nodes are continuously monitored using heartbeat signals over socket communication. Missing heartbeats (within an adaptive timeout value) indicate potential failure.
 
 2. **Failover Selection**  
    When a node fails, another node is selected and promoted to take over responsibilities.
