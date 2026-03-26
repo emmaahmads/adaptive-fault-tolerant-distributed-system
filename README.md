@@ -5,10 +5,10 @@ This project is based on my Master's thesis, where I designed and implemented a 
 ## Overview
 
 The system transforms a single-node application into a distributed architecture with replication and automated recovery mechanisms to eliminate single points of failure.
-![Alt text](image/overview.jpg)
+![Alt text](image/overview.JPG)
 
 It achieves high availability through replication, heartbeat-based failure detection, and automated failover with proxy-level traffic redirection.
-![Alt text](image/failover.jpg)
+![Alt text](image/failover.JPG)
 ## Key Features
 
 - Distributed system architecture with replicated modules
