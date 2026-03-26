@@ -1,48 +1,83 @@
-# Distributed High Availability System
+# Fault-Tolerant Distributed System
 
-This project is based on my Master's thesis, where I designed and implemented a fault-tolerant distributed system to improve system availability and reliability.
+This project demonstrates the design of a fault-tolerant distributed system that achieves high availability through replication, heartbeat-based failure detection, and automated failover.
 
-## Overview
+---
 
-The system transforms a single-node application into a distributed architecture with replication and automated recovery mechanisms to eliminate single points of failure. It achieves high availability through replication, heartbeat-based failure detection, and automated failover with proxy-level traffic redirection.
+## Why This Matters
+
+Modern distributed systems must remain available even when individual nodes fail. This project explores how to eliminate single points of failure (SPOF) and maintain service continuity using replication and automated recovery mechanisms.
+
+---
 
 ## System Architecture
 
 <p align="center">
-  <img src="image/overview.JPG" width="500"/>
+  <img src="image/overview.JPG" width="400"/>
 </p>
+
+This architecture illustrates how client requests are routed through a proxy to multiple nodes, how state is replicated across nodes, and how failures are detected using heartbeat monitoring.
+
+---
+
+## Key Concepts
+
+- Distributed systems architecture  
+- Fault tolerance and high availability  
+- Replication (data and state synchronization)  
+- Heartbeat-based failure detection  
+- Automated failover and recovery  
+- Load distribution via proxy  
+
+---
 
 ## Failure Handling Flow
 
 <p align="center">
-  <img src="image/failover.JPG" width="500"/>
+  <img src="image/failover.JPG" width="400"/>
 </p>
 
-## Key Features
+1. **Failure Detection**  
+   Nodes are continuously monitored using heartbeat signals over socket communication. Missing heartbeats indicate potential failure.
 
-- Distributed system architecture with replicated modules
-- Heartbeat-based failure detection using socket communication
-- Automated failover and recovery mechanisms
-- Neighbor-based replication strategy
-- Improved system availability by ~70%
+2. **Failover Selection**  
+   When a node fails, another node is selected and promoted to take over responsibilities.
 
-## System Design
+3. **Traffic Redirection**  
+   The proxy updates routing logic and redirects incoming requests to healthy nodes.
 
-The system consists of:
-- Multiple application nodes (cluster)
-- Monitoring component for failure detection
-- Replication mechanism for redundancy
-- Failover process for recovery
+4. **System Recovery (Optional)**  
+   The failed node can rejoin the cluster and resynchronize its state from peers.
 
-## Key Concepts
+---
 
-- Fault tolerance
-- High availability
-- Distributed systems
-- Replication strategies
-- Failure detection (heartbeat)
-- System recovery
+## Key Design Decisions
+
+- Used heartbeat-based failure detection for simplicity and responsiveness  
+- Designed replication to maintain system state across nodes  
+- Introduced proxy-based routing to isolate clients from node failures  
+- Prioritized availability over strict consistency  
+
+---
+
+## Example implementation in a virtualized distributed system
+
+- Nodes send periodic heartbeats  
+- If no heartbeat is received within a timeout, the node is considered failed  
+
+<p align="center">
+  <img src="image/detection-example.png" width="400"/>
+</p>
+
+---
 
 ## Notes
 
-This project focuses on system design and reliability engineering rather than UI or application-layer features.
+This project focuses on system design and reliability engineering rather than full production implementation. It reflects practical approaches to building resilient distributed systems.
+
+---
+
+## Author
+
+Emma Ahmad Sirajudin  
+Senior Software Engineer  
